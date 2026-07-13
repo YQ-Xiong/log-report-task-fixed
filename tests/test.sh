@@ -3,7 +3,7 @@
 mkdir -p /logs/verifier
 
 # pytest and pytest-json-ctrf are baked into the environment image.
-pytest --ctrf /logs/verifier/ctrf.json /tests/test_outputs.py -rA
+pytest /tests/test_outputs.py -rA --ctrf /logs/verifier/ctrf.json
 status=$?
 
 if [ "$status" -eq 0 ]; then
